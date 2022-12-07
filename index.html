@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width">
     <style>
-
+      input[type=file]{
+        display: none;
+      }
     </style>
-    <script></script>
+    <script type="text/javascript">
+      function loadScript() {
+        const input = loadScripts
+        if(input.files.length !== 0){
+          const scenario = input.files[0]
+          console.log(scenario)
+          var reader = new FileReader();
+          reader.onload = onReaderLoad
+          reader.readAsText(event.target.files[0])
+        }
+
+      }
+
+      function onReaderLoad(event){
+        console.log(event.target.result);
+        var obj = JSON.parse(event.target.result);
+        window.scenario = obj;
+        alert(window.scenario.scene);
+      }
+    </script>
   </head>
   <body>
-    <h1> Hello, World!!</h1>
+    <label for="loadScripts"> file upload </label>
+    <input id='loadScripts' type="file" accept=".json" onchange="loadScript()">
   </body>
 </html>
