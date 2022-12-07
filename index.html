@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <meta name="viewport" content="width=device-width">
+    <title>TRPG Helper</title>
     <style>
+      div{
+        display: flex;
+      }
+      .row{
+        flex-direction: row;
+        width: 100%;       
+      }
+      .col{
+        flex-direction: column;
+      }
+      .selection{
+        display: block;
+        text-align: center;
+        padding: 4px;
+        background-color: #999;
+        margin-bottom: 4px;
+      }
+      .selection:last-of-type{
+        margin-bottom: 0px;
+      }
       input[type=file]{
         display: none;
+      }
+      @media screen and (max-width: 425px) {
+        
       }
     </style>
     <script type="text/javascript">
@@ -22,15 +46,39 @@
       }
 
       function onReaderLoad(event){
-        console.log(event.target.result);
-        var obj = JSON.parse(event.target.result);
-        window.scenario = obj;
-        alert(window.scenario.scene);
+        console.log(event.target.result)
+        var obj = JSON.parse(event.target.result)
+        window.scenario = obj
+        sceneTitle.innerText = window.scenario.scene.title
+        sceneScript.innerText = window.scenario.scene.body
+        var sel = obj.scene.selection
+        selectionList.innerHTML = ""
+        sel.forEach(e => {
+          var selButton = document.createElement('div')
+          selButton.classList.add('selection')
+          selButton.innerText = e.body
+          selButton.dataset.value = e.value
+          selectionList.append(selButton)
+        })
       }
     </script>
   </head>
   <body>
-    <label for="loadScripts"> file upload </label>
+    <div class="col">
+      <div id="sceneTitle" class="row">
+        title
+      </div>
+      <div id="sceneScript" class="row">
+        대충 시나리오
+      </div>
+      <br>
+      <div id="selectionList"class="col">
+        <div class="selection"> sel1 </div>
+        <div class="selection"> sel2 </div>
+      </div>
+    </div>
+    <br><br><br><br><br>
+    <label for="loadScripts"> 시나리오 불러오기 </label>
     <input id='loadScripts' type="file" accept=".json" onchange="loadScript()">
   </body>
 </html>
