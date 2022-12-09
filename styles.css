@@ -1,0 +1,39 @@
+div{
+  display: flex;
+}
+
+.row{
+  flex-direction: row;
+  width: 100%;       
+}
+
+.col{
+  flex-direction: column;
+  flex: 1 1 0;
+}
+
+.selection{
+  display: block;
+  text-align: center;
+  padding: 4px;
+  background-color: #999;
+  margin-bottom: 4px;
+}
+
+.selection:last-of-type{
+  margin-bottom: 0px;
+}
+
+input[type=file]{
+  display: none;
+}
+
+.content-wrapper{
+  display: block;
+}
+
+@media screen and (max-width: 425px) {
+  .write-wrapper{
+    display: none;
+  }
+}
