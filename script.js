@@ -25,3 +25,20 @@ function onReaderLoad(event){
       selectionList.append(selButton)
   })
 }
+
+function addSelection(){
+  const selEditor = document.createElement('div');
+  selEditor.classList.add('row')
+  const selType = document.createElement('select');
+  selType.innerHTML = `
+  <option value="text" selected>텍스트</option>
+  `
+  const text = document.createElement('input');
+  text.type = text;
+  text.placeholder = "텍스트 입력"
+  const sceneInput = document.createElement('input');
+  sceneInput.type = 'number';
+  sceneInput.placeholder = "타겟 씬 번호";
+  selEditor.append(selType, text, sceneInput);
+  document.querySelector('.selection-add-wrapper').append(selEditor);
+}

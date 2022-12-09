@@ -1,3 +1,17 @@
+html{
+  font-size: 10pt;
+}
+
+body {
+  margin: 0px;
+}
+
+nav {
+  background-color: bisque;
+  margin-bottom: 4px;
+  padding: 4px;
+}
+
 div{
   display: flex;
 }
@@ -28,10 +42,34 @@ input[type=file]{
   display: none;
 }
 
-.content-wrapper{
+.doc-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-add-wrapper{
   display: block;
 }
 
+.doc-wrapper textarea {
+  resize: none;
+}
+
+.contents-wrapper {
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.btn {
+  margin: 4px;
+  padding: 4px 8px;
+  background-color: #128aed;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+}
 @media screen and (max-width: 425px) {
   .write-wrapper{
     display: none;

@@ -8,20 +8,33 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <nav>
+      <label for="loadScripts"> 시나리오 불러오기 </label>
+      <input id='loadScripts' type="file" accept=".json" onchange="loadScript()">
+    </nav>
     <div class="row">
-      <div class="col write-wrapper">
-        <div class="row write-wrapper"> 
+      <div class="col write-wrapper contents-wrapper">
+        <div class="row title-wrapper"> 
           제목 : <input type="text" placeholder="제목 입력">
         </div>
-        <div class="row content-wrapper"> 
+        <div class="row doc-wrapper"> 
           내용 : <br>
           <textarea placeholder="내용 입력"></textarea>
         </div>
-        <div class="row selection-wrapper">
-          
+        <div class="row selection-add-wrapper">
+          <div class="btn" onclick="addSelection()"> 선택지 추가 </div>
+          <div class="row">
+            <select>
+              <option value="text" selected>텍스트</option>
+            </select>
+            <input type="text" placeholder="텍스트 입력">
+            <input type="number" placeholder="타겟 씬">
+            <div class="btn"> 저장 </div>
+            <div class="btn"> 제거 </div>
+          </div>
         </div>
       </div>
-      <div id="viewer" class="col">
+      <div id="viewer" class="col contents-wrapper" draggable="true">
         <div id="sceneTitle" class="row">
           제목
         </div>
@@ -35,9 +48,5 @@
         </div>
       </div>
     </div>
-    
-    <br><br><br><br><br>
-    <label for="loadScripts"> 시나리오 불러오기 </label>
-    <input id='loadScripts' type="file" accept=".json" onchange="loadScript()">
   </body>
 </html>
