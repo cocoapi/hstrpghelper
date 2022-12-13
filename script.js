@@ -103,3 +103,9 @@ function makeSelecionEditor(setType = '텍스트', setText = '', setSceneNum = '
   selEditor.append(selType, text, sceneInput, saveBtn, removeBtn);
   return selEditor;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.write-wrapper .scene-num-wrapper input.scene-num-input').addEventListener('change', (e) => {
+    sceneNumber.innerHTML = '#'+e.target.value
+  })
+})

@@ -14,7 +14,7 @@
       <div class="btn"> 시나리오 트리 </div>
     </nav>
     <div class="row">
-      <div class="col write-wrapper contents-wrapper">
+      <div class="col write-wrapper contents-wrapper disable">
         <div class="row scene-num-wrapper">
           씬번호 :&nbsp; <input class="scene-num-input" type="number" placeholder="씬 번호">
         </div>
@@ -29,7 +29,10 @@
           <div class="btn" onclick="addSelection()"> 선택지 추가 </div>
         </div>
       </div>
-      <div id="viewer" class="col contents-wrapper" draggable="true">
+      <div id="viewer" class="col contents-wrapper disable">
+        <div id="sceneNumber" class="row">
+          씬번호
+        </div>
         <div id="sceneTitle" class="row">
           제목
         </div>
@@ -40,6 +43,93 @@
         <div id="selectionList"class="col">
           <div class="selection"> sel1 </div>
           <div class="selection"> sel2 </div>
+        </div>
+      </div>
+      <div class="col character-sheet">
+        <div class="row identity">
+          <div class="char-name">
+            <input name="char-name" type="text" placeholder="이름">
+          </div>
+          <div class="char-race">
+            <input name="char-race" type="text" placeholder="종족">
+          </div>
+        </div>
+        <div class="row char-class">
+          <div class="char-class-type">
+            <select aria-label="char-class-type">
+              <option value="warrior">전사</option> 
+              <option value="magicion">마법사</option>
+              <option value="hunter">헌터</option>
+              <option value="rogue">도적</option>
+              <option value="priest">사제</option>
+            </select>
+          </div>
+          <div class="char-class-class">
+            <select aria-label="char-class-type2">
+              <option value="none">-</option>
+              <option value="warrior">전사</option>
+              <option value="warrior">전사</option>
+              <option value="warrior">전사</option>
+            </select>
+          </div>
+          <div class="point">
+            100
+          </div>
+        </div>
+        <div class="row equip-1">
+          <div class="equip-name">
+            <select aria-label="equip1-name">
+              <option value="sword">검</option>
+              <option value="hand">맨손</option>
+              <option value="longSword">장검</option>
+              <option value="sword&shield">검과 방패</option>
+            </select>
+          </div>
+          <div class="at">3</div>
+          <div class="s">4</div>
+          <div class="d">2/4</div>
+          <div class="point"> 100 </div>
+        </div>
+        <div class="row equip-2">
+          <div class="equip-name">
+            <select aria-label="equip1-name">
+              <option value="sword">검</option>
+              <option value="hand">맨손</option>
+              <option value="longSword">장검</option>
+              <option value="sword&shield">검과 방패</option>
+            </select>
+          </div>
+          <div class="at">2</div>
+          <div class="s">3</div>
+          <div class="d">1/2</div>
+          <div class="point"> 50 </div>
+        </div>
+        <div class="row ride">
+          <div class="ride-name">
+            <select aria-label="ride-name">
+              <option value="none">-</option>
+              <option value="horse">군마</option>
+              <option value="wolf">늑대</option>
+              <option value="lizard">도마뱀</option>
+            </select>
+          </div>
+          <div class="point">
+            200
+          </div>
+        </div>
+        <div class="row stats">
+          <div class="point">
+            종합 pt :<span class="value">0</span>pt
+          </div>
+          <div class="ap">
+            AT: <span class="value">0</span>
+          </div>
+          <div class="t">
+            T: <span class="value">0</span>
+          </div>
+          <div class="w">
+            W: <span class="value">0</span>
+          </div>
         </div>
       </div>
     </div>

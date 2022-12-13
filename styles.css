@@ -114,6 +114,75 @@ input[type=file]{
   background-color: #34acfe;
 }
 
+.disable {
+  display: none;
+}
+
+.character-sheet {
+  border: 1px solid #000;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.character-sheet div {
+  width: 100%;
+}
+
+.character-sheet input, .character-sheet select {
+  width: 100%;
+  border: none;
+  text-align: center;
+}
+
+.character-sheet input:focus, .character-sheet select:focus {
+  outline: none;
+}
+
+.character-sheet .row {
+  border-bottom: 1px solid #000;
+}
+
+
+.character-sheet .row:last-of-type{
+  border-bottom: none;
+}
+
+.character-sheet .row div {
+  border-right: 1px solid #000;
+}
+
+.character-sheet .row div:last-of-type {
+  border-right: none;
+}
+
+.identity .char-name{
+  flex: 4;
+}
+.identity .char-race {
+  flex: 1;
+}
+
+.char-class .char-class-type, .char-class-class, .point {
+  flex: 1;
+}
+
+.equip-1 div, .equip-2 div {
+  flex: 1;
+}
+
+.ride div, .stats div {
+  flex: 1;
+}
+
+.point, .ap, .t, .w, .at, .s, .d {
+  display: block;
+}
+
+#sceneTitle, #sceneNumber{
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 425px) {
   .write-wrapper{
     display: none;
